@@ -1,1 +1,195 @@
 
+/* ====== GLOBAL VARIABLES ====== */
+:root {
+  --main-bg: #f0f4f8;
+  --accent-color: color(display-p3 0.1 0.6 0.9 / 0.8);
+  --fallback-color: orange;
+  --header-font: 'Roboto', sans-serif;
+  --body-font: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--body-font, sans-serif);
+  background-color: var(--main-bg);
+  margin: 0;
+  padding: 1rem;
+}
+
+header {
+  background-color: var(--accent-color, var(--fallback-color));
+  color: white;
+  text-align: center;
+  padding: 1em 2em;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #333;
+}
+
+h1, h2 {
+  font-family: var(--header-font);
+  color: hsl(210, 50%, 30%);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+section {
+  padding: 1.5em;
+  margin: 1em auto;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  max-width: 900px;
+}
+
+ul, ol {
+  padding-left: 2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+}
+
+video, audio {
+  display: block;
+  margin-top: 1em;
+}
+
+form {
+  background-color: #f9f9f9;
+  padding: 1rem 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Box Model Examples */
+#form {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 2px solid #444;
+  border-radius: 12px;
+}
+
+/* Shorthand version */
+#form {
+  margin: 20px auto 20px auto;
+  padding: 10px 15px 10px 15px;
+}
+
+/* Positioning */
+footer {
+  position: static;
+}
+nav {
+  position: sticky;
+  top: 0;
+}
+
+/* Display Types */
+header span {
+  display: inline;
+}
+section {
+  display: block;
+}
+
+/* Flexbox */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Grid Layout */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Pseudo-classes */
+input:focus {
+  border-color: #007BFF;
+  background-color: #eef;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Selectors */
+li[class] {
+  color: teal;
+}
+#media {
+  background-color: #eef7ff;
+}
+* {
+  box-sizing: border-box;
+}
+input[type="text"] {
+  background-color: #fffbe6;
+}
+h2:hover {
+  color: tomato;
+}
+
+/* Combinators */
+section p + p {
+  margin-top: 1.5rem;
+}
+section > ul {
+  list-style-type: square;
+}
+section ~ section {
+  border-left: 5px solid #f2f2f2;
+}
+details summary:has(+ p) {
+  font-weight: bold;
+  color: green;
+}
+
+/* Nested Selectors (using newer syntax) */
+section:is(.notes, .media) {
+  border-style: dashed;
+}
